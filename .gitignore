@@ -1,0 +1,94 @@
+# Python-related files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.sqlite3
+*.db
+
+# Environment variables
+.env
+*.env
+
+# Flask and virtual environment
+instance/
+venv/
+.venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Logs and output
+*.log
+*.out
+*.err
+logs/
+*.pid
+*.seed
+*.cover
+*.orig
+
+# MacOS and Linux files
+.DS_Store
+*.swp
+*.swo
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+.cache/
+.pytest_cache/
+nosetests.xml
+coverage/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# PyInstaller
+*.spec
+
+# PyCharm
+*.iml
+.idea/
+
+# Packages
+*.egg-info/
+.installed.cfg
+*.egg
+*.wheel
+
+# Sphinx documentation
+docs/_build/
+
+# Profiling data
+.prof
+
+# Build artifacts and metadata
+build/
+dist/
+MANIFEST
+*.egg-info/
+
+# Static files (generated on build/deploy)
+staticfiles/
+
+# Other sensitive files
+firebase_admin_sdk.json
+serviceAccountKey.json

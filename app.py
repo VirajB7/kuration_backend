@@ -12,7 +12,9 @@ load_dotenv()
 
 # Load environment variables
 ENRICHMENT_API_KEY = os.getenv('ENRICHMENT_API_KEY')
-FIREBASE_CREDENTIALS = os.getenv('FIREBASE_CREDENTIALS')
+FIREBASE_CREDENTIALS =os.getenv('FIREBASE_CREDENTIALS')
+print(f"Printing firebase credentials: {FIREBASE_CREDENTIALS}")
+
 
 app = Flask(__name__)
 CORS(app)

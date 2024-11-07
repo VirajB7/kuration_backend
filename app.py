@@ -6,20 +6,28 @@ import os
 from functools import wraps
 from urllib.parse import urlparse
 from dotenv import load_dotenv
-import base64
+import urllib.request
 import json
 load_dotenv()
 
 # Load environment variables
 ENRICHMENT_API_KEY = os.getenv('ENRICHMENT_API_KEY')
-FIREBASE_CREDENTIALS =os.getenv('FIREBASE_CREDENTIALS')
 
+
+
+url = os.getenv('FIREBASE_CREDENTIALS2')
+
+with urllib.request.urlopen(url) as response:
+    content = response.read().decode('utf-8')  # Read and decode the content
+
+FIREBASE_CREDENTIALS2 = json.loads(content)
 
 app = Flask(__name__)
 CORS(app)
 
 # Initialize Firebase Admin
-cred = credentials.Certificate(FIREBASE_CREDENTIALS)
+
+cred = credentials.Certificate(FIREBASE_CREDENTIALS2)
 initialize_app(cred)
 
 
@@ -33,6 +41,11 @@ def validate_url(url):
 
 def get_domain_name(url):
     return urlparse(url).netloc
+
+@app.route('/')
+def index():
+    return jsonify({'message': 'Hello, world!'})
+
 
 @app.route('/api/enrich', methods=['POST'])
 def enrich_lead():

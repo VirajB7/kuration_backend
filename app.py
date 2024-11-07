@@ -10,14 +10,9 @@ import base64
 import json
 load_dotenv()
 
-# Load the base64-encoded key and decode it
-service_account_key_str = os.getenv("FIREBASE_CREDENTIALS")
-service_account_key_json = json.loads(base64.b64decode(service_account_key_str))
-
-
 # Load environment variables
 ENRICHMENT_API_KEY = os.getenv('ENRICHMENT_API_KEY')
-FIREBASE_CREDENTIALS = service_account_key_json
+FIREBASE_CREDENTIALS = os.getenv('FIREBASE_CREDENTIALS')
 
 app = Flask(__name__)
 CORS(app)
